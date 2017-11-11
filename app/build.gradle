@@ -23,11 +23,7 @@ android {
 project.ext {
     appcompat = "26.1.0"
     constraintLayout = "1.0.2"
-    retrofit = "2.3.0"
-    rxAndroid = "2.0.1"
-    rxJava = "2.1.3"
     twitter = "3.1.1"
-    glide = "4.3.1"
     butterKnife = "8.8.1"
 }
 
@@ -43,21 +39,8 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$project.appcompat"
     compile "com.android.support:cardview-v7:$project.appcompat"
 
-    // retrofit network library
-    compile "com.squareup.retrofit2:retrofit:$project.retrofit"
-    compile "com.squareup.retrofit2:converter-gson:$project.retrofit"
-    compile "com.squareup.retrofit2:adapter-rxjava2:$project.retrofit"
-
-    // rx-java2 library
-    compile "io.reactivex.rxjava2:rxandroid:$project.rxAndroid"
-    compile "io.reactivex.rxjava2:rxjava:$project.rxJava"
-
     // twitter sdk
     compile "com.twitter.sdk.android:twitter:$project.twitter"
-
-    // glide image library
-    compile "com.github.bumptech.glide:glide:$project.glide"
-    annotationProcessor "com.github.bumptech.glide:compiler:$project.glide"
 
     // butter-knife injector library
     compile "com.jakewharton:butterknife:$project.butterKnife"

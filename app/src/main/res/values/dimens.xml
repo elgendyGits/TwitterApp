@@ -5,6 +5,8 @@
     <dimen name="progress_bar_height">42dp</dimen>
 
     <dimen name="tw__tweet_action_retweet_size">43dp</dimen>
+    <dimen name="animation_top_margin">50dp</dimen>
+    <dimen name="animation_height">80dp</dimen>
 
 
 </resources>

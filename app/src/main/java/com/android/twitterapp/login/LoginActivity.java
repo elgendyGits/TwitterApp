@@ -1,7 +1,10 @@
 package com.android.twitterapp.login;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.android.twitterapp.R;
@@ -30,6 +33,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @BindView(R.id.button_twitter_login)
     TwitterLoginButton twitterLoginButton;
 
+    @BindView(R.id.background_one)
+    ImageView backgroundOne;
+
+    @BindView(R.id.background_two)
+    ImageView backgroundTwo;
+
+
     // declare login presenter
     private LoginPresenter loginPresenter;
 
@@ -41,6 +51,27 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
         addingCallback();
         initializePresenter();
+        startAnimation();
+    }
+
+    private void startAnimation() {
+
+        ValueAnimator animator = ValueAnimator.ofFloat(0.0f, 1.0f);
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        animator.setInterpolator(new LinearInterpolator());
+        animator.setDuration(4000L);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                final float progress = (float) animation.getAnimatedValue();
+                final float width = backgroundOne.getWidth();
+                final float translationX = width * progress;
+                backgroundOne.setTranslationX(translationX);
+                backgroundTwo.setTranslationX(translationX - width);
+            }
+        });
+        animator.start();
+
     }
 
     private void addingCallback() {

@@ -4,6 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background_one"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/animation_height"
+            android:layout_marginTop="@dimen/animation_top_margin"
+            android:src="@drawable/twitter"/>
+
+        <ImageView
+            android:id="@+id/background_two"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/animation_height"
+            android:layout_marginTop="@dimen/animation_top_margin"
+            android:src="@drawable/twitter"/>
+
+    </FrameLayout>
+
     <com.twitter.sdk.android.core.identity.TwitterLoginButton
         android:id="@+id/button_twitter_login"
         android:layout_width="wrap_content"
