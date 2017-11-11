@@ -21,13 +21,13 @@ Application libraries :
 
 
 
-_All Routes Screen_**. 
+_Login Screen_**. 
 
 
 ![ScreenShot](https://raw.github.com/MohamedElgendyGits/TwitterApp/master/screenshots/Screenshot1.png)
 
 
-_Detail Route Screen_**. 
+_Timeline Screen_**. 
 
 
 ![ScreenShot](https://raw.github.com/MohamedElgendyGits/TwitterApp/master/screenshots/Screenshot2.png)
