@@ -1,0 +1,25 @@
+<com.android.twitterapp.custom.tweetview.view.TweetActionBarView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:twitter="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tw__custom_tweet_action_bar"
+    style="@style/tw__TweetFillWidth"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <com.twitter.sdk.android.tweetui.ToggleImageButton
+        android:id="@+id/tw__custom_tweet_like_button"
+        style="@style/tw__TweetActionButton.Heart"
+        android:layout_marginEnd="@dimen/tw__tweet_action_button_spacing"
+        android:layout_marginRight="@dimen/tw__tweet_action_button_spacing"
+        android:src="@drawable/tw__like_action"
+        twitter:contentDescriptionOff="@string/tw__like_tweet"
+        twitter:contentDescriptionOn="@string/tw__liked_tweet" />
+
+    <ImageButton
+        android:id="@+id/tw__custom_tweet_share_button"
+        style="@style/tw__TweetActionButton.Share"
+        android:contentDescription="@string/tw__share_tweet"
+        android:src="@drawable/tw__share_action" />
+
+</com.android.twitterapp.custom.tweetview.view.TweetActionBarView>

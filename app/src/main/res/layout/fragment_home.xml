@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <!-- A recycler view to show list of tweets in the home timeline-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_timeline_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/recycler_view_margin" />
+
+    <!-- A progress bar that will be shown to users to indicate that timeline tweets is loading -->
+    <ProgressBar
+        android:id="@+id/progressBar_loading_indicator"
+        android:layout_width="@dimen/progress_bar_width"
+        android:layout_height="@dimen/progress_bar_height"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+
+</FrameLayout>

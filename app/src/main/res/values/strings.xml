@@ -5,6 +5,8 @@
     <!-- Twitter Sdk Keys -->
     <string name="com.twitter.sdk.android.CONSUMER_KEY">DqrHmzXz6YMgKp8MYfVsArTRl</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">LPk6WEp4ADM4T6Wn1bYmBDuqzDi9ZOYE3MfcTd9w1ZiRglpqSu</string>
+    <string name="retry">Retry</string>
+    <string name="connection_failed">You are not connected to the internet !!</string>
 
 
 </resources>

@@ -6,6 +6,6 @@ package com.android.twitterapp.application;
 
 public class TwitterAppConstants {
 
-    public static final String LOGIN_FRAG_TAG  = "login_fragment";
+    public static final String HOME_FRAG_TAG  = "home_fragment";
 
 }
