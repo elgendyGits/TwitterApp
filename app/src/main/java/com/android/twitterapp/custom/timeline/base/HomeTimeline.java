@@ -67,7 +67,7 @@ public class HomeTimeline extends BaseTimeline implements Timeline<Tweet> {
                 includeRetweets);*/
 
         return twitterCore.getApiClient().getStatusesService().homeTimeline(maxItemsPerRequest,
-                null, null, null, null, null, null);
+                sinceId, maxId, false, !includeReplies, null,includeRetweets);
     }
 
     /**
