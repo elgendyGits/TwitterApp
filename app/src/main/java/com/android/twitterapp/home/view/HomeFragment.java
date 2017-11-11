@@ -96,7 +96,7 @@ public class HomeFragment extends BaseFragment implements HomeView {
             @Override
             public void success(Result<Tweet> result) {
                 // Intentionally blank
-                Toast.makeText(getActivity(), "GOOOD", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "Act", Toast.LENGTH_SHORT).show();
             }
 
             @Override
