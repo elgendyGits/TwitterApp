@@ -8,6 +8,13 @@
     tools:visibility="visible">
 
     <com.twitter.sdk.android.tweetui.ToggleImageButton
+        android:id="@+id/tw__custom_tweet_retweet_button"
+        style="@style/tw__TweetActionButton.Heart"
+        android:layout_marginEnd="@dimen/tw__tweet_action_button_spacing"
+        android:layout_marginRight="@dimen/tw__tweet_action_button_spacing"
+        android:src="@drawable/tw__retweet_action" />
+
+    <com.twitter.sdk.android.tweetui.ToggleImageButton
         android:id="@+id/tw__custom_tweet_like_button"
         style="@style/tw__TweetActionButton.Heart"
         android:layout_marginEnd="@dimen/tw__tweet_action_button_spacing"

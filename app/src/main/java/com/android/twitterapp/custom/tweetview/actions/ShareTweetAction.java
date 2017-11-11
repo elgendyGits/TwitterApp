@@ -6,11 +6,12 @@ import android.content.res.Resources;
 import android.view.View;
 
 import com.android.twitterapp.custom.tweetview.data.TweetScribeClientImpl;
+import com.android.twitterapp.custom.tweetview.listeners.TweetScribeClient;
 import com.android.twitterapp.custom.tweetview.view.TweetUi;
 import com.twitter.sdk.android.core.IntentUtils;
 import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.tweetui.TweetScribeClient;
+
 
 public class ShareTweetAction implements View.OnClickListener {
     final Tweet tweet;

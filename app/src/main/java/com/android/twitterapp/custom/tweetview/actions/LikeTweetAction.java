@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.android.twitterapp.custom.tweetview.data.TweetRepository;
 import com.android.twitterapp.custom.tweetview.data.TweetScribeClientImpl;
+import com.android.twitterapp.custom.tweetview.listeners.TweetScribeClient;
 import com.android.twitterapp.custom.tweetview.view.TweetUi;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
@@ -13,7 +14,7 @@ import com.twitter.sdk.android.core.internal.TwitterApiConstants;
 import com.twitter.sdk.android.core.models.Tweet;
 import com.twitter.sdk.android.core.models.TweetBuilder;
 import com.twitter.sdk.android.tweetui.ToggleImageButton;
-import com.twitter.sdk.android.tweetui.TweetScribeClient;
+
 
 /*
  * LikeTweetAction is a click listener for ToggleImageButtons which performs Twitter API
@@ -21,6 +22,7 @@ import com.twitter.sdk.android.tweetui.TweetScribeClient;
  * callback.
  */
 public class LikeTweetAction extends BaseTweetAction implements View.OnClickListener {
+
     final Tweet tweet;
     final TweetRepository tweetRepository;
     final TweetUi tweetUi;

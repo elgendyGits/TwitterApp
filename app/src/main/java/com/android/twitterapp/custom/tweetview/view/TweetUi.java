@@ -40,7 +40,7 @@ public class TweetUi {
 
     public static TweetUi getInstance() {
         if (instance == null) {
-            synchronized (com.twitter.sdk.android.tweetui.TweetUi.class) {
+            synchronized (TweetUi.class) {
                 if (instance == null) {
                     instance = new TweetUi();
                 }

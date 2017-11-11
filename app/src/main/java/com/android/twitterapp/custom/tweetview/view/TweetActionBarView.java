@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.android.twitterapp.R;
 import com.android.twitterapp.custom.tweetview.actions.LikeTweetAction;
+import com.android.twitterapp.custom.tweetview.actions.RetweetedAction;
 import com.android.twitterapp.custom.tweetview.actions.ShareTweetAction;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.models.Tweet;
@@ -19,6 +20,7 @@ import com.twitter.sdk.android.tweetui.ToggleImageButton;
 public class TweetActionBarView extends LinearLayout {
 
     final DependencyProvider dependencyProvider;
+    ToggleImageButton retweetButton;
     ToggleImageButton likeButton;
     ImageButton shareButton;
     Callback<Tweet> actionCallback;
@@ -50,6 +52,7 @@ public class TweetActionBarView extends LinearLayout {
     }
 
     void findSubviews() {
+        retweetButton = (ToggleImageButton) findViewById(R.id.tw__custom_tweet_retweet_button) ;
         likeButton = (ToggleImageButton) findViewById(R.id.tw__custom_tweet_like_button);
         shareButton = (ImageButton) findViewById(R.id.tw__custom_tweet_share_button);
     }
@@ -59,8 +62,19 @@ public class TweetActionBarView extends LinearLayout {
      * @param tweet Tweet source for whether an action has been performed (e.g. isFavorited?)
      */
     void setTweet(Tweet tweet) {
+        setRetweet(tweet);
         setLike(tweet);
         setShare(tweet);
+    }
+
+    void setRetweet(Tweet tweet) {
+        final TweetUi tweetUi = dependencyProvider.getTweetUi();
+        if (tweet != null) {
+            retweetButton.setToggledOn(tweet.retweeted);
+            final RetweetedAction reTweetAction = new RetweetedAction(tweet,
+                    tweetUi, actionCallback);
+            retweetButton.setOnClickListener(reTweetAction);
+        }
     }
 
     void setLike(Tweet tweet) {

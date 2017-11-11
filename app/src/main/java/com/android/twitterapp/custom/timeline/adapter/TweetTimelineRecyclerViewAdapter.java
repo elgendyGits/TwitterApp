@@ -14,6 +14,7 @@ import com.android.twitterapp.custom.timeline.constants.ScribeConstants;
 import com.android.twitterapp.custom.timeline.delegates.FilterTimelineDelegate;
 import com.android.twitterapp.custom.timeline.delegates.TimelineDelegate;
 import com.android.twitterapp.custom.tweetview.view.TweetUi;
+import com.android.twitterapp.custom.tweetview.view.TweetView;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.twitter.sdk.android.core.Callback;
@@ -125,16 +126,18 @@ public class TweetTimelineRecyclerViewAdapter extends
     @Override
     public TweetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final Tweet tweet = new TweetBuilder().build();
-        final CompactTweetView compactTweetView = new CompactTweetView(context, tweet, styleResId);
-        compactTweetView.setOnActionCallback(actionCallback);
-        return new TweetViewHolder(compactTweetView);
+
+        final TweetView tweetView = new TweetView(context, tweet, styleResId);
+
+        tweetView.setOnActionCallback(actionCallback);
+        return new TweetViewHolder(tweetView);
     }
 
     @Override
     public void onBindViewHolder(TweetViewHolder holder, int position) {
         final Tweet tweet = timelineDelegate.getItem(position);
-        final CompactTweetView compactTweetView = (CompactTweetView) holder.itemView;
-        compactTweetView.setTweet(tweet);
+        final TweetView tweetView = (TweetView) holder.itemView;
+        tweetView.setTweet(tweet);
     }
 
     @Override
@@ -143,7 +146,7 @@ public class TweetTimelineRecyclerViewAdapter extends
     }
 
     protected static final class TweetViewHolder extends RecyclerView.ViewHolder {
-        public TweetViewHolder(CompactTweetView itemView) {
+        public TweetViewHolder(TweetView itemView) {
             super(itemView);
         }
     }

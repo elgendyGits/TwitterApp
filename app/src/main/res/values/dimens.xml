@@ -3,4 +3,8 @@
     <dimen name="recycler_view_margin">8dp</dimen>
     <dimen name="progress_bar_width">42dp</dimen>
     <dimen name="progress_bar_height">42dp</dimen>
+
+    <dimen name="tw__tweet_action_retweet_size">43dp</dimen>
+
+
 </resources>

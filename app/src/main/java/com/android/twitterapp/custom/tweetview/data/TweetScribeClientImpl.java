@@ -1,12 +1,12 @@
 package com.android.twitterapp.custom.tweetview.data;
 
+import com.android.twitterapp.custom.tweetview.listeners.TweetScribeClient;
 import com.android.twitterapp.custom.tweetview.view.TweetUi;
 import com.twitter.sdk.android.core.internal.scribe.EventNamespace;
 import com.twitter.sdk.android.core.internal.scribe.ScribeItem;
 import com.twitter.sdk.android.core.internal.scribe.SyndicatedSdkImpressionEvent;
 import com.twitter.sdk.android.core.internal.scribe.SyndicationClientEvent;
 import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.tweetui.TweetScribeClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,8 @@ public class TweetScribeClientImpl implements TweetScribeClient {
     static final String SCRIBE_IMPRESSION_ACTION = "impression";
     static final String SCRIBE_FAVORITE_ACTION = "favorite";
     static final String SCRIBE_UNFAVORITE_ACTION = "unfavorite";
+    static final String SCRIBE_RETWEET_ACTION = "retweet";
+    static final String SCRIBE_UNRETWEET_ACTION = "unretweet";
     static final String SCRIBE_SHARE_ACTION = "share";
     static final String SCRIBE_ACTIONS_ELEMENT = "actions";
 
@@ -70,6 +72,22 @@ public class TweetScribeClientImpl implements TweetScribeClient {
     }
 
     @Override
+    public void retweet(Tweet tweet) {
+        final List<ScribeItem> items = new ArrayList<>();
+        items.add(ScribeItem.fromTweet(tweet));
+
+        tweetUi.scribe(getTfwRetweetNamespace(), items);
+    }
+
+    @Override
+    public void unretweet(Tweet tweet) {
+        final List<ScribeItem> items = new ArrayList<>();
+        items.add(ScribeItem.fromTweet(tweet));
+
+        tweetUi.scribe(getTfwUnretweetNamespace(), items);
+    }
+
+    @Override
     public void click(Tweet tweet, String viewName) {
         final List<ScribeItem> items = new ArrayList<>();
         items.add(ScribeItem.fromTweet(tweet));
@@ -105,6 +123,26 @@ public class TweetScribeClientImpl implements TweetScribeClient {
                 .setSection(TFW_CLIENT_EVENT_SECTION)
                 .setElement(SCRIBE_ACTIONS_ELEMENT)
                 .setAction(SCRIBE_FAVORITE_ACTION)
+                .builder();
+    }
+
+    public static EventNamespace getTfwUnretweetNamespace() {
+        return new EventNamespace.Builder()
+                .setClient(SyndicationClientEvent.CLIENT_NAME)
+                .setPage(TFW_CLIENT_EVENT_PAGE)
+                .setSection(TFW_CLIENT_EVENT_SECTION)
+                .setElement(SCRIBE_ACTIONS_ELEMENT)
+                .setAction(SCRIBE_UNRETWEET_ACTION)
+                .builder();
+    }
+
+    public static EventNamespace getTfwRetweetNamespace() {
+        return new EventNamespace.Builder()
+                .setClient(SyndicationClientEvent.CLIENT_NAME)
+                .setPage(TFW_CLIENT_EVENT_PAGE)
+                .setSection(TFW_CLIENT_EVENT_SECTION)
+                .setElement(SCRIBE_ACTIONS_ELEMENT)
+                .setAction(SCRIBE_RETWEET_ACTION)
                 .builder();
     }
 

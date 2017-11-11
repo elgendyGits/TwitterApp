@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="tw_retweetActionButton">
+        <item name="android:layout_width">@dimen/tw__tweet_action_retweet_size</item>
+        <item name="android:layout_height">@dimen/tw__tweet_action_retweet_size</item>
+    </style>
+
 </resources>
