@@ -31,6 +31,6 @@ _Login Screen_**.
 _Timeline Screen_**. 
 
 
-![ScreenShot](https://raw.github.com/MohamedElgendyGits/TwitterApp/master/screenshots/Screenshot2.png)
+![ScreenShot](https://raw.github.com/MohamedElgendyGits/TwitterApp/master/screenshots/Screenshot3.png)
 
 
